@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\voterController;
 use App\Http\Controllers\ActivityLogController;
 use App\Http\Controllers\CountController;
 use App\Http\Controllers\votescontroller;
-use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\candidateController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -29,13 +29,13 @@ Route::get('/Admin_record', [AuthController::class,'Admin_recordView'])->name('A
 Route::get('/delete.Admin/{id}', [AuthController::class,'DeleteAdmin'])->name('delete.Admin');
 Route::get('/enable_disable.Admin/{id}', [AuthController::class,'enable_disable_Admin'])->name('enable_disable.Admin');
 
-Route::get('/logout',[AdminController::class,'logout'])->name('logout');
+Route::get('/logout',[adminController::class,'logout'])->name('logout');
 
-Route::get('/profile', [AdminController::class,'profileView'])->name('profile.view');
-Route::post('/profile', [AdminController::class,'profilePost'])->name('profile.post');
+Route::get('/profile', [adminController::class,'profileView'])->name('profile.view');
+Route::post('/profile', [adminController::class,'profilePost'])->name('profile.post');
 
-Route::get('/ChangePassword', [AdminController::class,'changePasswordView'])->name('changePassword.view');
-Route::post('/ChangePassword', [AdminController::class,'changePasswordPost'])->name('changePassword.post');
+Route::get('/ChangePassword', [adminController::class,'changePasswordView'])->name('changePassword.view');
+Route::post('/ChangePassword', [adminController::class,'changePasswordPost'])->name('changePassword.post');
 });
 
 Route::middleware('auth')->group(function () {
